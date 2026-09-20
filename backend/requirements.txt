@@ -15,3 +15,5 @@ chromadb
 sentence-transformers
 pypdf
 python-dotenv
+pydantic-settings
+openai
