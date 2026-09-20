@@ -1,0 +1,17 @@
+fastapi
+uvicorn
+sqlalchemy
+psycopg2-binary
+alembic
+passlib[bcrypt]
+bcrypt==4.0.1
+python-jose[cryptography]
+python-multipart
+email-validator
+google-auth
+google-auth-oauthlib
+user-agents
+chromadb
+sentence-transformers
+pypdf
+python-dotenv

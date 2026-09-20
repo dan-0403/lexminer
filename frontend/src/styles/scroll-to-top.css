@@ -1,0 +1,306 @@
+/* =========================================================
+   SCROLL TO TOP BUTTON
+========================================================= */
+
+.scroll-top-button {
+  position: fixed;
+  z-index: 9999;
+  right: 32px;
+  bottom: 34px;
+
+  display: grid;
+  width: 64px;
+  height: 64px;
+  place-items: center;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  color: #ffffff;
+  background: transparent;
+
+  cursor: pointer;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transform: translateY(35px) scale(0.78);
+
+  transition:
+    opacity 0.32s ease,
+    transform 0.32s ease;
+}
+
+/* =========================================================
+   VISIBLE STATE
+========================================================= */
+
+.scroll-top-visible {
+  opacity: 1;
+
+  pointer-events: auto;
+
+  transform: translateY(0) scale(1);
+}
+
+/* =========================================================
+   PROGRESS SVG
+========================================================= */
+
+.scroll-top-progress-ring {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: visible;
+
+  transform: rotate(-90deg);
+
+  filter: drop-shadow(0 7px 18px rgba(7, 113, 151, 0.22));
+}
+
+.scroll-top-progress-track,
+.scroll-top-progress-value {
+  fill: none;
+  stroke-width: 4;
+}
+
+.scroll-top-progress-track {
+  stroke: rgba(111, 190, 215, 0.28);
+}
+
+.scroll-top-progress-value {
+  stroke: #20b5da;
+
+  stroke-linecap: round;
+
+  transition: stroke-dashoffset 0.16s linear;
+
+  filter: drop-shadow(0 0 5px rgba(33, 183, 219, 0.7));
+}
+
+/* =========================================================
+   INNER BUTTON
+========================================================= */
+
+.scroll-top-inner {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.68);
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 30% 20%,
+      rgba(255, 255, 255, 0.22),
+      transparent 34%
+    ),
+    linear-gradient(135deg, #08769e, #1aa8d2);
+
+  box-shadow:
+    0 15px 38px rgba(4, 104, 143, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.scroll-top-inner::before {
+  position: absolute;
+  inset: -6px;
+
+  border: 1px solid rgba(57, 199, 233, 0.24);
+  border-radius: 50%;
+
+  content: "";
+
+  animation: scroll-top-pulse 2.6s ease-out infinite;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.scroll-top-inner svg {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.16));
+
+  transition: transform 0.22s ease;
+}
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.scroll-top-button:hover .scroll-top-inner {
+  box-shadow:
+    0 18px 46px rgba(4, 104, 143, 0.38),
+    0 0 22px rgba(32, 181, 218, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.32);
+
+  transform: translateY(-3px) scale(1.05);
+}
+
+.scroll-top-button:hover .scroll-top-inner svg {
+  transform: translateY(-2px);
+}
+
+.scroll-top-button:active .scroll-top-inner {
+  transform: scale(0.94);
+}
+
+/* =========================================================
+   TOOLTIP
+========================================================= */
+
+.scroll-top-tooltip {
+  position: absolute;
+  right: calc(100% + 12px);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 44px;
+  min-height: 28px;
+  padding: 0 8px;
+
+  border: 1px solid rgba(132, 193, 214, 0.52);
+  border-radius: 9px;
+
+  color: #0a5877;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  box-shadow: 0 10px 25px rgba(13, 82, 108, 0.14);
+
+  backdrop-filter: blur(12px);
+
+  font-size: 0.62rem;
+  font-weight: 800;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transform: translateX(8px);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.scroll-top-tooltip::after {
+  position: absolute;
+  top: 50%;
+  right: -5px;
+
+  width: 9px;
+  height: 9px;
+
+  border-top: 1px solid rgba(132, 193, 214, 0.52);
+  border-right: 1px solid rgba(132, 193, 214, 0.52);
+
+  background: rgba(255, 255, 255, 0.94);
+
+  content: "";
+
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.scroll-top-button:hover .scroll-top-tooltip,
+.scroll-top-button:focus-visible .scroll-top-tooltip {
+  opacity: 1;
+
+  transform: translateX(0);
+}
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.scroll-top-button:focus-visible {
+  outline: 3px solid rgba(32, 181, 218, 0.3);
+
+  outline-offset: 5px;
+}
+
+/* =========================================================
+   PULSE ANIMATION
+========================================================= */
+
+@keyframes scroll-top-pulse {
+  0% {
+    opacity: 0.7;
+
+    transform: scale(0.9);
+  }
+
+  70% {
+    opacity: 0;
+
+    transform: scale(1.25);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform: scale(1.25);
+  }
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+  .scroll-top-button {
+    right: 18px;
+    bottom: 20px;
+
+    width: 58px;
+    height: 58px;
+  }
+
+  .scroll-top-inner {
+    width: 43px;
+    height: 43px;
+  }
+
+  .scroll-top-tooltip {
+    display: none;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-top-button,
+  .scroll-top-inner,
+  .scroll-top-inner svg,
+  .scroll-top-progress-value,
+  .scroll-top-tooltip {
+    transition: none;
+  }
+
+  .scroll-top-inner::before {
+    animation: none;
+  }
+}

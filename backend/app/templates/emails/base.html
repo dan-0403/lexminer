@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{{ subject }}</title>
+  </head>
+
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      background-color: #eef5f8;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #17384b;
+    "
+  >
+    <table
+      width="100%"
+      cellpadding="0"
+      cellspacing="0"
+      role="presentation"
+      style="width: 100%; background-color: #eef5f8; padding: 36px 16px"
+    >
+      <tr>
+        <td align="center">
+          <table
+            width="100%"
+            cellpadding="0"
+            cellspacing="0"
+            role="presentation"
+            style="
+              width: 100%;
+              max-width: 620px;
+              background-color: #ffffff;
+              border-radius: 18px;
+              overflow: hidden;
+              border: 1px solid #d9e9f0;
+              box-shadow: 0 18px 50px rgba(23, 56, 75, 0.1);
+            "
+          >
+            <tr>
+              <td
+                style="
+                  padding: 28px 34px;
+                  background: linear-gradient(135deg, #093b57, #0f6388);
+                "
+              >
+                <table
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  role="presentation"
+                >
+                  <tr>
+                    <td>
+                      <div
+                        style="
+                          color: #ffffff;
+                          font-size: 26px;
+                          font-weight: 800;
+                          letter-spacing: -0.5px;
+                        "
+                      >
+                        LexMiner
+                      </div>
+
+                      <div
+                        style="
+                          margin-top: 5px;
+                          color: #bfe9f7;
+                          font-size: 12px;
+                          line-height: 1.5;
+                        "
+                      >
+                        AI Adaptive Language Case Decision Miner
+                      </div>
+                    </td>
+
+                    <td align="right">
+                      <div
+                        style="
+                          display: inline-block;
+                          padding: 8px 12px;
+                          border-radius: 999px;
+                          color: #e7f8ff;
+                          background-color: rgba(255, 255, 255, 0.12);
+                          font-size: 11px;
+                          font-weight: 700;
+                        "
+                      >
+                        Secure Notification
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding: 38px 34px 30px">
+                {% block content %}{% endblock %}
+              </td>
+            </tr>
+
+            <tr>
+              <td
+                style="
+                  padding: 22px 34px;
+                  background-color: #f7fbfd;
+                  border-top: 1px solid #e2edf2;
+                "
+              >
+                <p
+                  style="
+                    margin: 0;
+                    color: #718b9a;
+                    font-size: 11px;
+                    line-height: 1.7;
+                    text-align: center;
+                  "
+                >
+                  This is an automated security message from LexMiner. Please do
+                  not reply to this email.
+                </p>
+
+                <p
+                  style="
+                    margin: 7px 0 0;
+                    color: #8ba0ad;
+                    font-size: 10px;
+                    line-height: 1.6;
+                    text-align: center;
+                  "
+                >
+                  © {{ current_year }} LexMiner. All rights reserved.
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

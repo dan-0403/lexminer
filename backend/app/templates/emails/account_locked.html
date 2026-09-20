@@ -1,0 +1,107 @@
+{% extends "base.html" %} {% block content %}
+
+<div style="text-align: center">
+  <div
+    style="
+      width: 62px;
+      height: 62px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background-color: #ffe8ec;
+      color: #c13d57;
+      font-size: 29px;
+      line-height: 62px;
+      font-weight: 800;
+    "
+  >
+    !
+  </div>
+
+  <h1 style="margin: 0; color: #8a2639; font-size: 27px; line-height: 1.25">
+    Your account has been locked
+  </h1>
+
+  <p
+    style="
+      margin: 15px auto 0;
+      max-width: 490px;
+      color: #657f8e;
+      font-size: 14px;
+      line-height: 1.75;
+    "
+  >
+    LexMiner temporarily locked your account after multiple unsuccessful login
+    attempts.
+  </p>
+
+  <div
+    style="
+      margin: 28px auto 0;
+      max-width: 470px;
+      padding: 18px;
+      border: 1px solid #f2c9d1;
+      border-radius: 13px;
+      background-color: #fff7f8;
+      text-align: left;
+    "
+  >
+    <div style="color: #9d3046; font-size: 12px; font-weight: 800">
+      Security details
+    </div>
+
+    <table
+      width="100%"
+      cellpadding="0"
+      cellspacing="0"
+      role="presentation"
+      style="margin-top: 12px; font-size: 12px"
+    >
+      <tr>
+        <td style="padding: 6px 0; color: #78909d">Account</td>
+
+        <td
+          align="right"
+          style="padding: 6px 0; color: #234c60; font-weight: 700"
+        >
+          {{ email }}
+        </td>
+      </tr>
+
+      <tr>
+        <td style="padding: 6px 0; color: #78909d">Failed attempts</td>
+
+        <td
+          align="right"
+          style="padding: 6px 0; color: #234c60; font-weight: 700"
+        >
+          {{ failed_attempts }}
+        </td>
+      </tr>
+
+      <tr>
+        <td style="padding: 6px 0; color: #78909d">Locked until</td>
+
+        <td
+          align="right"
+          style="padding: 6px 0; color: #234c60; font-weight: 700"
+        >
+          {{ locked_until }}
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <p
+    style="
+      margin: 22px auto 0;
+      max-width: 470px;
+      color: #8095a2;
+      font-size: 12px;
+      line-height: 1.7;
+    "
+  >
+    The account will automatically unlock after the lock period.
+  </p>
+</div>
+
+{% endblock %}
