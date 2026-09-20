@@ -61,8 +61,8 @@ backend/uploads/profile_pictures/
 huggingface/
 **/huggingface/
 
-models/
-**/models/
+hf_models/
+**/hf_models/
 
 # ==========================================
 # DATASETS
